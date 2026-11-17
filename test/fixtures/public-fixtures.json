@@ -1,0 +1,393 @@
+{
+  "schemaVersion": 1,
+  "corpusVersion": "2026-11-17",
+  "generatedAt": "2026-11-17",
+  "root": "test/fixtures/public",
+  "note": "公开夹具唯一清单（方案 6.4 / 02 语料审计第 7 章）。只登记经来源与授权审查确认可公开的项目自造语料；真实用户任务运行产物（artifacts/model_*_rNNN_*.json、solution_*_rNNN_*.json、run 记录、jobs_store）一律不进入本清单、不随仓发布。12 个 model 与 10 个 solution 为 2026-10-25/26 早期项目自造自测语料（02 报告 A 级；原路径与 SHA 见 source），2 个 design 为按方案 6.4 重新制作的自造测试几何。test/fixtures/draw_budget_samples.json 含历史私有运行产物名，已去标识化（只保留数值统计、name 改为无语义序号 sample-NNN）但仍不属于公开夹具：公开仓不提供冻结标定快照，tools/calibrate_draw_budget.py 在公开语料下明确报告「不可用于重新标定」。旧的 45 样本历史基线已移出公开树（迁至 artifacts/baselines/offline_full.json 供私有回归），公开基线 test/fixtures/public/offline-baseline.json 由公开 12 个模型现场生成并与本清单绑定。",
+  "entries": [
+    {
+      "id": "design-eave-overhang-ok",
+      "path": "test/fixtures/public/design/eave-overhang-ok.json",
+      "type": "design-plan",
+      "size": 1220,
+      "sha256": "b99388b972a7a095e79291fe0766ae9b93e4900aea474bbb4ab0d2204ca98f79",
+      "source": "按开源整改方案 6.4 重新制作（项目自造测试几何，未复制私有 artifacts 语料；不含真实用户需求文本）",
+      "license": "MIT (project-owned)",
+      "consumers": [
+        "test/test_design_support.py"
+      ],
+      "required": true,
+      "note": "出檐 1 格：floatingVoxels=14、unsupportedVoxels=0；缺失/哈希不符必须失败"
+    },
+    {
+      "id": "design-overhang-unsupported",
+      "path": "test/fixtures/public/design/overhang-unsupported.json",
+      "type": "design-plan",
+      "size": 795,
+      "sha256": "b320ff2098e1ef95879d3b20f849f4dc1ef32c3a9a06b8463a71f3029f14c736",
+      "source": "按开源整改方案 6.4 重新制作（项目自造测试几何，未复制私有 artifacts 语料；不含真实用户需求文本）",
+      "license": "MIT (project-owned)",
+      "consumers": [
+        "test/test_design_support.py"
+      ],
+      "required": true,
+      "note": "孤立柱大悬挑：设计预检拒绝，错误含「得不到支撑」；缺失/哈希不符必须失败"
+    },
+    {
+      "id": "model-arch-bridge",
+      "path": "test/fixtures/public/models/model_arch-bridge.json",
+      "type": "model",
+      "size": 58562,
+      "sha256": "192b9f8fcb8a2f1435f112e7391f538d50c9650e2ec512b646ef381d1caed8a3",
+      "source": "artifacts/model_arch-bridge.json（2026-10-25/26 早期项目自造自测语料；02 语料审计 A 级；owner 私审确认后迁入）",
+      "license": "MIT (project-owned)",
+      "consumers": [
+        "tools/benchmark_offline.py",
+        "tools/calibrate_draw_budget.py"
+      ],
+      "required": true,
+      "note": "离线基准样本；期望 passed=true"
+    },
+    {
+      "id": "model-big-sailboat",
+      "path": "test/fixtures/public/models/model_big-sailboat.json",
+      "type": "model",
+      "size": 53163,
+      "sha256": "03f207fcf56a15e2ee2cf75c0ce2715c6592c71124ecf83c397a0d22eddcab02",
+      "source": "artifacts/model_big-sailboat.json（2026-10-25/26 早期项目自造自测语料；02 语料审计 A 级；owner 私审确认后迁入）",
+      "license": "MIT (project-owned)",
+      "consumers": [
+        "tools/benchmark_offline.py",
+        "tools/calibrate_draw_budget.py"
+      ],
+      "required": true,
+      "note": "离线基准样本；期望 passed=true"
+    },
+    {
+      "id": "model-little-turtle",
+      "path": "test/fixtures/public/models/model_little-turtle.json",
+      "type": "model",
+      "size": 46909,
+      "sha256": "f96d8571639c69c548650294993608d84938ae04d34209f89fab84f05eda37c3",
+      "source": "artifacts/model_little-turtle.json（2026-10-25/26 早期项目自造自测语料；02 语料审计 A 级；owner 私审确认后迁入）",
+      "license": "MIT (project-owned)",
+      "consumers": [
+        "tools/benchmark_offline.py",
+        "tools/calibrate_draw_budget.py"
+      ],
+      "required": true,
+      "note": "离线基准样本；期望 passed=true"
+    },
+    {
+      "id": "model-medieval-corner-towers-castle",
+      "path": "test/fixtures/public/models/model_medieval-corner-towers-castle.json",
+      "type": "model",
+      "size": 88157,
+      "sha256": "e389b0f8e09d139a00b3df720748bbe4e30e4c0a3e77160c4a5a598d69ca0c78",
+      "source": "artifacts/model_medieval-corner-towers-castle.json（2026-10-25/26 早期项目自造自测语料；02 语料审计 A 级；owner 私审确认后迁入）",
+      "license": "MIT (project-owned)",
+      "consumers": [
+        "tools/benchmark_offline.py",
+        "tools/calibrate_draw_budget.py"
+      ],
+      "required": true,
+      "note": "离线基准样本；期望 passed=true"
+    },
+    {
+      "id": "model-mid-castle",
+      "path": "test/fixtures/public/models/model_mid-castle.json",
+      "type": "model",
+      "size": 64836,
+      "sha256": "f295d9028b29bb014c8d47f1f78b584511710edf8459a99c972524455183f519",
+      "source": "artifacts/model_mid-castle.json（2026-10-25/26 早期项目自造自测语料；02 语料审计 A 级；owner 私审确认后迁入）",
+      "license": "MIT (project-owned)",
+      "consumers": [
+        "tools/benchmark_offline.py",
+        "tools/calibrate_draw_budget.py"
+      ],
+      "required": true,
+      "note": "离线基准样本；期望 passed=true"
+    },
+    {
+      "id": "model-red-retro-car",
+      "path": "test/fixtures/public/models/model_red-retro-car.json",
+      "type": "model",
+      "size": 39409,
+      "sha256": "421a45d7a8017db22b2352716026a485f00f47326f8efde802f7f5809f064d86",
+      "source": "artifacts/model_red-retro-car.json（2026-10-25/26 早期项目自造自测语料；02 语料审计 A 级；owner 私审确认后迁入）",
+      "license": "MIT (project-owned)",
+      "consumers": [
+        "tools/benchmark_offline.py",
+        "tools/calibrate_draw_budget.py"
+      ],
+      "required": true,
+      "note": "离线基准样本；期望 passed=true"
+    },
+    {
+      "id": "model-small-bridge",
+      "path": "test/fixtures/public/models/model_small-bridge.json",
+      "type": "model",
+      "size": 31856,
+      "sha256": "c3bab369d09f93e083ce12ec5a3c762b1832cc5b625201b52558cd6d473ec525",
+      "source": "artifacts/model_small-bridge.json（2026-10-25/26 早期项目自造自测语料；02 语料审计 A 级；owner 私审确认后迁入）",
+      "license": "MIT (project-owned)",
+      "consumers": [
+        "tools/benchmark_offline.py",
+        "tools/calibrate_draw_budget.py"
+      ],
+      "required": true,
+      "note": "离线基准样本；期望 passed=true"
+    },
+    {
+      "id": "model-streamline-galleon",
+      "path": "test/fixtures/public/models/model_streamline-galleon.json",
+      "type": "model",
+      "size": 40492,
+      "sha256": "bc05ee84d99d6ad48f44b066b1eb4b1063b2ab7d8f3724e79addaf5b88fdd4e0",
+      "source": "artifacts/model_streamline-galleon.json（2026-10-25/26 早期项目自造自测语料；02 语料审计 A 级；owner 私审确认后迁入）",
+      "license": "MIT (project-owned)",
+      "consumers": [
+        "tools/benchmark_offline.py",
+        "tools/calibrate_draw_budget.py"
+      ],
+      "required": true,
+      "note": "离线基准样本；期望 passed=true"
+    },
+    {
+      "id": "model-three-mast-galleon-v3",
+      "path": "test/fixtures/public/models/model_three-mast-galleon-v3.json",
+      "type": "model",
+      "size": 58855,
+      "sha256": "e8e467079c827e74c132e38deb73597470b3ab5e59df344d53740b10cda0af02",
+      "source": "artifacts/model_three-mast-galleon-v3.json（2026-10-25/26 早期项目自造自测语料；02 语料审计 A 级；owner 私审确认后迁入）",
+      "license": "MIT (project-owned)",
+      "consumers": [
+        "tools/benchmark_offline.py",
+        "tools/calibrate_draw_budget.py"
+      ],
+      "required": true,
+      "note": "离线基准样本；期望 passed=true"
+    },
+    {
+      "id": "model-toy-car",
+      "path": "test/fixtures/public/models/model_toy-car.json",
+      "type": "model",
+      "size": 20245,
+      "sha256": "cfacf7262d3bff36762ada07b6c0eeb45c19d4ba6ede53e7fd43c671afa0e16d",
+      "source": "artifacts/model_toy-car.json（2026-10-25/26 早期项目自造自测语料；02 语料审计 A 级；owner 私审确认后迁入）",
+      "license": "MIT (project-owned)",
+      "consumers": [
+        "tools/benchmark_offline.py",
+        "tools/calibrate_draw_budget.py"
+      ],
+      "required": true,
+      "note": "离线基准样本；期望 passed=true"
+    },
+    {
+      "id": "model-tri-mast-sailing-ship",
+      "path": "test/fixtures/public/models/model_tri-mast-sailing-ship.json",
+      "type": "model",
+      "size": 40423,
+      "sha256": "45d9023fdd6af17cb8fdcef200ca06da9b827b674be683804e69d6857daa35c1",
+      "source": "artifacts/model_tri-mast-sailing-ship.json（2026-10-25/26 早期项目自造自测语料；02 语料审计 A 级；owner 私审确认后迁入）",
+      "license": "MIT (project-owned)",
+      "consumers": [
+        "tools/benchmark_offline.py",
+        "tools/calibrate_draw_budget.py"
+      ],
+      "required": true,
+      "note": "离线基准样本；期望 passed=true"
+    },
+    {
+      "id": "model-upright-piano",
+      "path": "test/fixtures/public/models/model_upright-piano.json",
+      "type": "model",
+      "size": 59150,
+      "sha256": "e0a18057c1274237a275f302c0df3ff0b524b639e46d058bd702be0b86856f10",
+      "source": "artifacts/model_upright-piano.json（2026-10-25/26 早期项目自造自测语料；02 语料审计 A 级；owner 私审确认后迁入）",
+      "license": "MIT (project-owned)",
+      "consumers": [
+        "tools/benchmark_offline.py",
+        "tools/calibrate_draw_budget.py"
+      ],
+      "required": true,
+      "note": "离线基准样本；期望 passed=true"
+    },
+    {
+      "id": "solution-arch-bridge",
+      "path": "test/fixtures/public/solutions/solution_arch-bridge.json",
+      "type": "solution",
+      "size": 29948,
+      "sha256": "aadbecad9f32de5b964de670ccfd89030f3fa1d736ee232fc70ec7d27449a2d0",
+      "source": "artifacts/solution_arch-bridge.json（deterministic exact-tiler 确定性铺贴产物；02 语料审计 A 级；owner 私审确认后迁入）",
+      "license": "MIT (project-owned)",
+      "consumers": [
+        "test/test_parts_api.py"
+      ],
+      "required": true,
+      "note": "valid=true、steps=186"
+    },
+    {
+      "id": "solution-layered-christmas-tree",
+      "path": "test/fixtures/public/solutions/solution_layered-christmas-tree.json",
+      "type": "solution",
+      "size": 57503,
+      "sha256": "37160c1f714b7d09e472dd420b8308c7349f53a94d76b66785c094b058fc4778",
+      "source": "artifacts/solution_layered-christmas-tree.json（deterministic exact-tiler 确定性铺贴产物；02 语料审计 A 级；owner 私审确认后迁入）",
+      "license": "MIT (project-owned)",
+      "consumers": [
+        "test/test_parts_api.py"
+      ],
+      "required": true,
+      "note": "valid=true、steps=352"
+    },
+    {
+      "id": "solution-medieval-corner-towers-castle",
+      "path": "test/fixtures/public/solutions/solution_medieval-corner-towers-castle.json",
+      "type": "solution",
+      "size": 48548,
+      "sha256": "44aa51961a960c80a1761ef1277dd1dc3221cdf40dc2876d10ec88b0eb432d95",
+      "source": "artifacts/solution_medieval-corner-towers-castle.json（deterministic exact-tiler 确定性铺贴产物；02 语料审计 A 级；owner 私审确认后迁入）",
+      "license": "MIT (project-owned)",
+      "consumers": [
+        "test/test_parts_api.py"
+      ],
+      "required": true,
+      "note": "valid=true、steps=319"
+    },
+    {
+      "id": "solution-mid-castle",
+      "path": "test/fixtures/public/solutions/solution_mid-castle.json",
+      "type": "solution",
+      "size": 34962,
+      "sha256": "b5dd5420c86fe0b24e65cce83fd2ec773ac6d85b2384fc551dec79b81eada58c",
+      "source": "artifacts/solution_mid-castle.json（deterministic exact-tiler 确定性铺贴产物；02 语料审计 A 级；owner 私审确认后迁入）",
+      "license": "MIT (project-owned)",
+      "consumers": [
+        "test/test_parts_api.py"
+      ],
+      "required": true,
+      "note": "valid=true、steps=217"
+    },
+    {
+      "id": "solution-red-apple",
+      "path": "test/fixtures/public/solutions/solution_red-apple.json",
+      "type": "solution",
+      "size": 23502,
+      "sha256": "8c7e4c72d29b63cabe99410fe9dc7e14ca87cd4f91a8e6f2a85ea498578e7fbe",
+      "source": "artifacts/solution_red-apple.json（deterministic exact-tiler 确定性铺贴产物；02 语料审计 A 级；owner 私审确认后迁入）",
+      "license": "MIT (project-owned)",
+      "consumers": [
+        "test/test_parts_api.py"
+      ],
+      "required": true,
+      "note": "valid=true、steps=148"
+    },
+    {
+      "id": "solution-small-bridge",
+      "path": "test/fixtures/public/solutions/solution_small-bridge.json",
+      "type": "solution",
+      "size": 19942,
+      "sha256": "699edca227288ec18821e80ffafebe5383b3e8ee6d3f138261c58e1e3a572cc3",
+      "source": "artifacts/solution_small-bridge.json（deterministic exact-tiler 确定性铺贴产物；02 语料审计 A 级；owner 私审确认后迁入）",
+      "license": "MIT (project-owned)",
+      "consumers": [
+        "test/test_parts_api.py"
+      ],
+      "required": true,
+      "note": "valid=true、steps=123"
+    },
+    {
+      "id": "solution-streamline-galleon",
+      "path": "test/fixtures/public/solutions/solution_streamline-galleon.json",
+      "type": "solution",
+      "size": 22761,
+      "sha256": "a12ec936a87d2dc97850c9c6718f981043698683b7b7f54955aaeb333592924d",
+      "source": "artifacts/solution_streamline-galleon.json（deterministic exact-tiler 确定性铺贴产物；02 语料审计 A 级；owner 私审确认后迁入）",
+      "license": "MIT (project-owned)",
+      "consumers": [
+        "test/test_parts_api.py"
+      ],
+      "required": true,
+      "note": "valid=true、steps=143"
+    },
+    {
+      "id": "solution-three-mast-galleon-v3",
+      "path": "test/fixtures/public/solutions/solution_three-mast-galleon-v3.json",
+      "type": "solution",
+      "size": 38386,
+      "sha256": "0058c546dab107ef9ed6fd1c0b8313ed32d000fb2113de3f851679ba6076bbf3",
+      "source": "artifacts/solution_three-mast-galleon-v3.json（deterministic exact-tiler 确定性铺贴产物；02 语料审计 A 级；owner 私审确认后迁入）",
+      "license": "MIT (project-owned)",
+      "consumers": [
+        "test/test_parts_api.py"
+      ],
+      "required": true,
+      "note": "valid=true、steps=240"
+    },
+    {
+      "id": "solution-toy-car",
+      "path": "test/fixtures/public/solutions/solution_toy-car.json",
+      "type": "solution",
+      "size": 11610,
+      "sha256": "cc221e5c3962b0349e7656ac46374e51e3ea4753195e7b319c5be72273e65590",
+      "source": "artifacts/solution_toy-car.json（deterministic exact-tiler 确定性铺贴产物；02 语料审计 A 级；owner 私审确认后迁入）",
+      "license": "MIT (project-owned)",
+      "consumers": [
+        "test/test_parts_api.py"
+      ],
+      "required": true,
+      "note": "valid=true、steps=71"
+    },
+    {
+      "id": "solution-upright-piano",
+      "path": "test/fixtures/public/solutions/solution_upright-piano.json",
+      "type": "solution",
+      "size": 32120,
+      "sha256": "28ae2828c6cc5da423a7fe09fe78bc720ad31af1e49e1f9939d1b4c8e154528f",
+      "source": "artifacts/solution_upright-piano.json（deterministic exact-tiler 确定性铺贴产物；02 语料审计 A 级；owner 私审确认后迁入）",
+      "license": "MIT (project-owned)",
+      "consumers": [
+        "test/test_parts_api.py"
+      ],
+      "required": true,
+      "note": "valid=true、steps=200"
+    },
+    {
+      "id": "offline-baseline-public",
+      "path": "test/fixtures/public/offline-baseline.json",
+      "type": "baseline",
+      "size": 3044,
+      "sha256": "7e1a4ad6c7b4074cb821d6a0ef2d6667be7be040c5b48d7f19e1e8f31a21c1c7",
+      "source": "由公开 12 个 model 夹具经 tools/benchmark_offline.py --update 现场生成（非历史 45 样本基线）",
+      "license": "MIT (project-owned)",
+      "consumers": [
+        "tools/benchmark_offline.py"
+      ],
+      "required": false,
+      "note": "total=12、passed=12、slugs/逐样本 SHA 与清单一致；派生基线不计入 24 份必需语料"
+    },
+    {
+      "id": "history-corpus-public",
+      "path": "test/fixtures/public/history-corpus.json",
+      "type": "history-corpus",
+      "size": 27107,
+      "sha256": "3f728b34c1b064c01f3e8f43744e000723b105eff87f9c3399d5350c543042f1",
+      "source": "由已发布源码 tools/e2e_cases_{20,extra,g,new20,r,batch2}.py 中冻结的需求原文与主题词确定性生成；不含 artifacts/ 运行记录、不含未公开用户需求、不新增披露",
+      "license": "MIT (project-owned)",
+      "consumers": [
+        "tools/e2e_cases_20.py",
+        "tools/e2e_cases_batch2.py",
+        "tools/e2e_cases_g.py",
+        "tools/e2e_cases_new20.py",
+        "tools/e2e_cases_r.py",
+        "test/test_e2e_cases_g.py",
+        "test/test_e2e_cases_new20.py",
+        "test/test_e2e_cases_r.py",
+        "test/test_e2e_cases_batch2.py"
+      ],
+      "required": false,
+      "note": "新颖性审计公开语料：C/X/G/N/R/B 组冻结需求与主题词；审计时须排除本组条目，缺语料时工具 --audit 必须 exit 2（不得静默通过）"
+    }
+  ]
+}

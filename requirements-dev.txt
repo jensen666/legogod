@@ -1,0 +1,5 @@
+# Full development and test dependencies (used by public CI and local full test runs).
+# The base/fast pipeline only needs the Python 3.10+ standard library;
+# Pillow is required for rendering, visual review and the full test suite.
+pytest>=8.0
+Pillow>=10.0

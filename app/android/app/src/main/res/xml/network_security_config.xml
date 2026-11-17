@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Android 网络安全策略：
+  - 默认禁止明文 HTTP：不全局放开 usesCleartextTraffic，也不忽略证书；
+  - 仅对明确的本地/回环调试入口放行明文，覆盖开发期 adb reverse 与模拟器；
+  - APP 访问用户配置的局域网服务地址时，服务地址由用户在设置页显式填写并展示，
+    网络栈使用 Dart HttpClient（不经过 WebView）；若真机实测被系统策略拦截，
+    届时按最小范围在 domain-config 中追加具体主机并在真机证据中记录。
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <!-- 回环与模拟器入口：只用于开发调试，不覆盖任意主机 -->
+        <domain includeSubdomains="false">localhost</domain>
+        <domain includeSubdomains="false">127.0.0.1</domain>
+        <domain includeSubdomains="false">10.0.2.2</domain>
+    </domain-config>
+</network-security-config>

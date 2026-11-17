@@ -1,0 +1,11 @@
+# 统一行尾：文本文件入库用 LF，避免 Windows / macOS 协作时产生无意义 diff。
+# 一次性规范化提交（git add --renormalize .），此后按属性自动归一。
+* text=auto eol=lf
+
+# 二进制文件：不做行尾转换
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary

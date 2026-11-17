@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 安全漏洞（私有报告）
+    url: https://github.com/jensen666/legogod/security/advisories/new
+    about: 请不要用公开 Issue 报告安全漏洞，使用 GitHub 私有漏洞报告。
+  - name: 使用问题与讨论
+    url: https://github.com/jensen666/legogod/discussions
+    about: 一般性使用问题、经验交流请使用 Discussions。

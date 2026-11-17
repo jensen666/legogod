@@ -1,0 +1,111 @@
+/* 创作台作品舞台与历史配色条。抽屉浮在舞台上，不撑高页面。 */
+
+#wb-body { flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; overflow: hidden; }
+.workbench { overflow: hidden; }
+.home { overflow: hidden; }
+
+.phases { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; margin: 0; padding: 8px 16px 0; }
+.phases li {
+  display: inline-flex; align-items: center; gap: 5px;
+  border: 1px solid var(--border); background: var(--inset); color: var(--muted);
+  border-radius: 999px; padding: 2px 10px; font-size: 12px;
+}
+.phases li.on { border-color: var(--brand-text); color: var(--brand-text); background: var(--brand-bg); font-weight: 650; }
+.phases li .cnt {
+  min-width: 16px; height: 16px; border-radius: 999px; padding: 0 4px;
+  background: var(--brand); color: var(--brand-ink); font-size: 11px; font-weight: 700;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.wb-narr { margin: 2px 16px 0; color: var(--text-2); font-size: 13px; }
+.wb-progress {
+  margin: 4px 16px 0; align-self: flex-start;
+  font: 12px/1.5 var(--font-mono); color: var(--info);
+  background: var(--info-bg); border: 1px solid var(--info-bd);
+  border-radius: 6px; padding: 2px 8px;
+}
+.wb-progress:empty { display: none; }
+.wb-live {
+  margin: 4px 16px 0; font: 12px/1.5 var(--font-mono); color: var(--warn);
+}
+.wb-live[hidden] { display: none; }
+.think-host { display: flex; flex-direction: column; padding: 6px 16px 0; min-height: 0; }
+.think-host:empty { display: none; }
+
+.stagewrap { position: relative; flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; overflow: visible; }
+.stage-slim { flex: 0 0 auto; overflow: visible; }
+.stage-canvas { flex: 1 1 auto; min-height: 0; position: relative; overflow: hidden; }
+.stage-canvas.lgs-root {
+  height: 100%; display: flex; flex-direction: column; box-sizing: border-box;
+  padding: 4px 12px 0; overflow: hidden;
+}
+.stage-canvas.lgs-root > [role="tabpanel"]:not([hidden]) {
+  flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; overflow: auto;
+}
+.stage-canvas.lgs-root .lgs-stage { flex: 1 1 auto; min-height: 120px; height: auto !important; }
+.stage-canvas.lgs-root .lgs-viewhead { display: none; }
+.preview-stage, .preview-wait { position: absolute; inset: 0; }
+.preview-stage canvas { width: 100%; height: 100%; display: block; }
+.preview-cap, .preview-wait {
+  position: absolute; left: 0; right: 0; bottom: 36px; text-align: center;
+  color: var(--muted); font-size: 12px; pointer-events: none;
+}
+.preview-wait { display: flex; align-items: center; justify-content: center; bottom: 0; }
+
+.log-drawer { flex: 0 0 auto; position: relative; z-index: 4; }
+.log-drawer-bar {
+  display: flex; align-items: center; gap: 8px;
+  padding: 6px 12px; border-top: 1px solid var(--border-soft); background: rgba(255, 255, 255, .94);
+}
+.log-toggle {
+  border: 0; background: transparent; color: var(--text-2); cursor: pointer; font: inherit; font-size: 13px;
+}
+.log-drawer-body {
+  position: absolute; left: 8px; right: 8px; bottom: 100%; z-index: 6;
+  height: min(280px, 42vh); overflow: hidden;
+  display: flex; flex-direction: column;
+  background: rgba(255, 255, 255, .98); border-top: 1px solid var(--border);
+  box-shadow: 0 -8px 22px rgba(32, 36, 43, .16);
+}
+.log-drawer-body .logbox { height: 100%; overflow: auto; }
+.log-drawer-body[hidden] { display: none; }
+.phasebar {
+  margin: 8px 0 4px; padding: 3px 8px; border-left: 3px solid var(--brand);
+  color: var(--brand-text); font-size: 12px; background: var(--brand-bg);
+}
+.solver-group { margin: 4px 0; }
+.solver-group summary { color: var(--text-3); }
+
+.wb-facts { display: flex; flex-wrap: wrap; gap: 6px; padding: 8px 16px 0; }
+.badge-hot { border-color: var(--brand-text); color: var(--brand-text); }
+.wb-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.failcard {
+  margin: 12px 16px; padding: 14px 16px; border: 1px solid var(--bad-bd); border-radius: 10px;
+  background: var(--bad-bg); max-height: 180px; overflow: auto;
+}
+.failcard h3, .infocard h3 { margin: 0 0 8px; font-size: 15px; }
+.failcard p, .infocard p { margin: 0 0 10px; white-space: pre-wrap; }
+.infocard {
+  margin: 12px 16px; padding: 14px 16px; border: 1px solid var(--info-bd); border-radius: 10px;
+  background: var(--info-bg);
+}
+.infocard .banner { margin-bottom: 8px; }
+
+.viewstrip { display: flex; gap: 8px; overflow: auto; padding: 8px 16px; }
+.viewstrip figure { margin: 0; flex: 0 0 auto; text-align: center; }
+.viewstrip img { height: 92px; border-radius: 6px; border: 1px solid var(--border); background: var(--stage); }
+.viewstrip figcaption { color: var(--muted); font-size: 11px; }
+
+.palette { display: inline-flex; width: 84px; height: 10px; border-radius: 999px; overflow: hidden; background: var(--border-soft); }
+.palette i { display: block; height: 100%; }
+.palette-empty { color: var(--muted); }
+.recent-works { width: min(420px, 100%); display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
+.recent-card {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  width: 100%; text-align: left; border: 1px solid var(--border); background: var(--panel);
+  color: var(--text); border-radius: 10px; padding: 8px 12px; cursor: pointer;
+}
+.recent-card:hover { border-color: var(--brand-text); }
+
+@media (max-height: 620px) {
+  .home { overflow: visible; }
+}

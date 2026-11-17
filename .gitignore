@@ -1,0 +1,50 @@
+# 公开仓库忽略规则（独立维护，不沿用私有开发仓规则）。
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+
+# 本地配置与密钥
+.env
+.env.*
+!.env.example
+*.jks
+*.keystore
+
+# 运行产物（仓库内只保留明确登记的公开测试夹具）
+artifacts/jobs_store.json
+artifacts/jobs_store.json.*.tmp
+artifacts/run_*.json
+artifacts/**/*.log
+artifacts/viz/
+artifacts/e2e-*/
+artifacts/run-*/
+
+# Flutter / Dart
+app/build/
+app/.dart_tool/
+app/.flutter-plugins
+app/.flutter-plugins-dependencies
+app/android/key.properties
+app/android/local.properties
+
+# Android / Gradle 本地产物
+tools/uiauto/build/
+tools/uiauto/.gradle/
+tools/uiauto/local.properties
+tools/adbime/build/
+tools/adbime/.gradle/
+tools/adbime/local.properties
+.gradle/
+
+# 编辑器与系统文件
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

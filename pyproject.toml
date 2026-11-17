@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "legogod"
+dynamic = ["version"]
+description = "把一句自然语言需求变成可校验、可一步步拼装的 3D 积木作品"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "LEGOGOD contributors" }]
+keywords = ["lego", "voxel", "brick", "llm", "agent", "3d"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.optional-dependencies]
+# 基础/快速链路只依赖标准库；渲染、高保真评审与全量测试需要 Pillow。
+pillow = ["Pillow>=10.0"]
+# 图表类 E2E 报告工具的可选依赖，不进入默认测试与 CI。
+charts = ["matplotlib>=3.7", "numpy>=1.24"]
+# 开发与测试完整依赖（等价于 requirements-dev.txt）。
+dev = ["pytest>=8.0", "Pillow>=10.0"]
+
+[project.scripts]
+legogod = "legogod.__main__:main"
+
+[tool.setuptools]
+packages = ["legogod"]
+
+[tool.setuptools.dynamic]
+version = { attr = "legogod.__version__" }
+
+[tool.pytest.ini_options]
+testpaths = ["test"]

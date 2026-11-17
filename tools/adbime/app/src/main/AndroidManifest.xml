@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 测试工具：ADB 广播输入法（真机 E2E 中文文本注入） -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:allowBackup="false"
+        android:label="LEGOGOD ADB IME">
+
+        <service
+            android:name=".AdbImeService"
+            android:exported="true"
+            android:label="LEGOGOD ADB IME"
+            android:permission="android.permission.BIND_INPUT_METHOD">
+            <intent-filter>
+                <action android:name="android.view.InputMethod" />
+            </intent-filter>
+            <meta-data
+                android:name="android.view.im"
+                android:resource="@xml/method" />
+        </service>
+
+        <receiver
+            android:name=".InputReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.legogod.adbime.INPUT" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

@@ -1,0 +1,105 @@
+{
+  "samples": [
+    {
+      "name": "悬伸旗板(探出2格)",
+      "positive": true,
+      "gate_passed": true,
+      "air": 9,
+      "contact": 1,
+      "volume": 2,
+      "air_share": 0.9,
+      "free_cell_ratio": 0.5
+    },
+    {
+      "name": "悬伸手臂(贴墙伸出2格)",
+      "positive": true,
+      "gate_passed": true,
+      "air": 14,
+      "contact": 2,
+      "volume": 4,
+      "air_share": 0.875,
+      "free_cell_ratio": 0.5
+    },
+    {
+      "name": "塔身(截面环+阶跃)",
+      "positive": true,
+      "gate_passed": true,
+      "air": 114,
+      "contact": 0,
+      "volume": 48,
+      "air_share": 1.0,
+      "free_cell_ratio": 1.0
+    },
+    {
+      "name": "薄壁风帆(双侧露空)",
+      "positive": true,
+      "gate_passed": true,
+      "air": 72,
+      "contact": 0,
+      "volume": 12,
+      "air_share": 1.0,
+      "free_cell_ratio": 1.0
+    },
+    {
+      "name": "收分楼层(占满整层且上下阶跃)",
+      "positive": true,
+      "gate_passed": true,
+      "air": 12,
+      "contact": 18,
+      "volume": 9,
+      "air_share": 0.4,
+      "free_cell_ratio": 0.0
+    },
+    {
+      "name": "异色贴花2格(嵌墙面)",
+      "positive": false,
+      "gate_passed": false,
+      "air": 4,
+      "contact": 6,
+      "volume": 2,
+      "air_share": 0.4,
+      "free_cell_ratio": 0.0
+    },
+    {
+      "name": "同色画圈4格(嵌墙面)",
+      "positive": false,
+      "gate_passed": false,
+      "air": 8,
+      "contact": 8,
+      "volume": 4,
+      "air_share": 0.5,
+      "free_cell_ratio": 0.0
+    },
+    {
+      "name": "单格突起(套利)",
+      "positive": false,
+      "gate_passed": false,
+      "air": 5,
+      "contact": 1,
+      "volume": 1,
+      "air_share": 0.8333,
+      "free_cell_ratio": 0.0
+    },
+    {
+      "name": "大面积整面墙皮贴花(无阶跃1格厚)",
+      "positive": false,
+      "gate_passed": false,
+      "air": 28,
+      "contact": 12,
+      "volume": 12,
+      "air_share": 0.7,
+      "free_cell_ratio": 0.0
+    }
+  ],
+  "calibration": {
+    "zero_false_negatives": true,
+    "zero_false_positives": true,
+    "false_negatives": [],
+    "false_positives": [],
+    "air_share_margin": -0.1,
+    "min_solid_volume": 2,
+    "surface_volume_cap": 0.08,
+    "positives": 5,
+    "negatives": 4
+  }
+}

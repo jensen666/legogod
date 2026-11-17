@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 测试工具：真机 E2E 的 UiAutomation 驱动 APK（不属于 APP 产品代码） -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:allowBackup="false"
+        android:label="LEGOGOD UIAuto Driver" />
+
+    <instrumentation
+        android:name=".DriverInstrumentation"
+        android:targetPackage="com.legogod.uiauto"
+        android:handleProfiling="false"
+        android:functionalTest="true" />
+</manifest>

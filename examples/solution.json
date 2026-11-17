@@ -1,0 +1,367 @@
+{
+  "model": "exact-tiler (回溯精确覆盖)",
+  "valid": true,
+  "attempts": 1,
+  "strategy": "程序化精确铺贴：逐层自下而上，回溯精确覆盖，大砖优先，斜面体素由同向斜坡砖覆盖，逐砖校验支撑与库存。",
+  "steps": [
+    {
+      "layer": 0,
+      "piece": "B1x4",
+      "x": 0,
+      "z": 0,
+      "rotate": false,
+      "w": 1,
+      "d": 4,
+      "step": 1
+    },
+    {
+      "layer": 0,
+      "piece": "B1x2",
+      "x": 1,
+      "z": 0,
+      "rotate": true,
+      "w": 2,
+      "d": 1,
+      "step": 2
+    },
+    {
+      "layer": 0,
+      "piece": "B1x3",
+      "x": 5,
+      "z": 0,
+      "rotate": true,
+      "w": 3,
+      "d": 1,
+      "step": 3
+    },
+    {
+      "layer": 0,
+      "piece": "B1x4",
+      "x": 7,
+      "z": 1,
+      "rotate": false,
+      "w": 1,
+      "d": 4,
+      "step": 4
+    },
+    {
+      "layer": 0,
+      "piece": "B1x2",
+      "x": 0,
+      "z": 4,
+      "rotate": false,
+      "w": 1,
+      "d": 2,
+      "step": 5
+    },
+    {
+      "layer": 0,
+      "piece": "B1x4",
+      "x": 1,
+      "z": 5,
+      "rotate": true,
+      "w": 4,
+      "d": 1,
+      "step": 6
+    },
+    {
+      "layer": 0,
+      "piece": "B1x3",
+      "x": 5,
+      "z": 5,
+      "rotate": true,
+      "w": 3,
+      "d": 1,
+      "step": 7
+    },
+    {
+      "layer": 1,
+      "piece": "B1x3",
+      "x": 0,
+      "z": 0,
+      "rotate": true,
+      "w": 3,
+      "d": 1,
+      "step": 8
+    },
+    {
+      "layer": 1,
+      "piece": "B1x3",
+      "x": 5,
+      "z": 0,
+      "rotate": true,
+      "w": 3,
+      "d": 1,
+      "step": 9
+    },
+    {
+      "layer": 1,
+      "piece": "B1x1",
+      "x": 0,
+      "z": 1,
+      "rotate": false,
+      "w": 1,
+      "d": 1,
+      "step": 10
+    },
+    {
+      "layer": 1,
+      "piece": "B1x1",
+      "x": 7,
+      "z": 1,
+      "rotate": false,
+      "w": 1,
+      "d": 1,
+      "step": 11
+    },
+    {
+      "layer": 1,
+      "piece": "B1x2",
+      "x": 0,
+      "z": 4,
+      "rotate": false,
+      "w": 1,
+      "d": 2,
+      "step": 12
+    },
+    {
+      "layer": 1,
+      "piece": "B1x2",
+      "x": 7,
+      "z": 4,
+      "rotate": false,
+      "w": 1,
+      "d": 2,
+      "step": 13
+    },
+    {
+      "layer": 1,
+      "piece": "B1x4",
+      "x": 1,
+      "z": 5,
+      "rotate": true,
+      "w": 4,
+      "d": 1,
+      "step": 14
+    },
+    {
+      "layer": 1,
+      "piece": "B1x2",
+      "x": 5,
+      "z": 5,
+      "rotate": true,
+      "w": 2,
+      "d": 1,
+      "step": 15
+    },
+    {
+      "layer": 2,
+      "piece": "B1x4",
+      "x": 0,
+      "z": 0,
+      "rotate": false,
+      "w": 1,
+      "d": 4,
+      "step": 16
+    },
+    {
+      "layer": 2,
+      "piece": "B1x4",
+      "x": 1,
+      "z": 0,
+      "rotate": true,
+      "w": 4,
+      "d": 1,
+      "step": 17
+    },
+    {
+      "layer": 2,
+      "piece": "B1x3",
+      "x": 5,
+      "z": 0,
+      "rotate": true,
+      "w": 3,
+      "d": 1,
+      "step": 18
+    },
+    {
+      "layer": 2,
+      "piece": "B1x4",
+      "x": 7,
+      "z": 1,
+      "rotate": false,
+      "w": 1,
+      "d": 4,
+      "step": 19
+    },
+    {
+      "layer": 2,
+      "piece": "B1x2",
+      "x": 0,
+      "z": 4,
+      "rotate": false,
+      "w": 1,
+      "d": 2,
+      "step": 20
+    },
+    {
+      "layer": 2,
+      "piece": "B1x4",
+      "x": 1,
+      "z": 5,
+      "rotate": true,
+      "w": 4,
+      "d": 1,
+      "step": 21
+    },
+    {
+      "layer": 2,
+      "piece": "B1x3",
+      "x": 5,
+      "z": 5,
+      "rotate": true,
+      "w": 3,
+      "d": 1,
+      "step": 22
+    },
+    {
+      "layer": 3,
+      "piece": "B2x4",
+      "x": 0,
+      "z": 0,
+      "rotate": false,
+      "w": 2,
+      "d": 4,
+      "step": 23
+    },
+    {
+      "layer": 3,
+      "piece": "B2x4",
+      "x": 2,
+      "z": 0,
+      "rotate": true,
+      "w": 4,
+      "d": 2,
+      "step": 24
+    },
+    {
+      "layer": 3,
+      "piece": "B2x4",
+      "x": 6,
+      "z": 0,
+      "rotate": false,
+      "w": 2,
+      "d": 4,
+      "step": 25
+    },
+    {
+      "layer": 3,
+      "piece": "B2x4",
+      "x": 2,
+      "z": 2,
+      "rotate": false,
+      "w": 2,
+      "d": 4,
+      "step": 26
+    },
+    {
+      "layer": 3,
+      "piece": "B2x4",
+      "x": 4,
+      "z": 2,
+      "rotate": false,
+      "w": 2,
+      "d": 4,
+      "step": 27
+    },
+    {
+      "layer": 3,
+      "piece": "B2x2",
+      "x": 0,
+      "z": 4,
+      "rotate": false,
+      "w": 2,
+      "d": 2,
+      "step": 28
+    },
+    {
+      "layer": 3,
+      "piece": "B2x2",
+      "x": 6,
+      "z": 4,
+      "rotate": false,
+      "w": 2,
+      "d": 2,
+      "step": 29
+    },
+    {
+      "layer": 4,
+      "piece": "B2x4",
+      "x": 0,
+      "z": 1,
+      "rotate": true,
+      "w": 4,
+      "d": 2,
+      "step": 30
+    },
+    {
+      "layer": 4,
+      "piece": "B2x4",
+      "x": 4,
+      "z": 1,
+      "rotate": false,
+      "w": 2,
+      "d": 4,
+      "step": 31
+    },
+    {
+      "layer": 4,
+      "piece": "B2x4",
+      "x": 6,
+      "z": 1,
+      "rotate": false,
+      "w": 2,
+      "d": 4,
+      "step": 32
+    },
+    {
+      "layer": 4,
+      "piece": "B2x4",
+      "x": 0,
+      "z": 3,
+      "rotate": true,
+      "w": 4,
+      "d": 2,
+      "step": 33
+    },
+    {
+      "layer": 5,
+      "piece": "B2x4",
+      "x": 0,
+      "z": 2,
+      "rotate": true,
+      "w": 4,
+      "d": 2,
+      "step": 34
+    },
+    {
+      "layer": 5,
+      "piece": "B2x4",
+      "x": 4,
+      "z": 2,
+      "rotate": true,
+      "w": 4,
+      "d": 2,
+      "step": 35
+    }
+  ],
+  "usage": {
+    "B1x4": 8,
+    "B1x2": 6,
+    "B1x3": 6,
+    "B1x1": 2,
+    "B2x4": 11,
+    "B2x2": 2
+  },
+  "residualErrors": []
+}

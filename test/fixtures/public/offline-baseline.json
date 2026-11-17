@@ -1,0 +1,118 @@
+{
+  "corpusVersion": "2026-11-17",
+  "fixturesManifest": "test/fixtures/public-fixtures.json",
+  "passed": 12,
+  "rate": 1.0,
+  "results": {
+    "arch-bridge": {
+      "attempts": 1,
+      "kind": null,
+      "message": "",
+      "ok": true,
+      "pieces": 107,
+      "seconds": 0.03,
+      "sha256": "192b9f8fcb8a2f1435f112e7391f538d50c9650e2ec512b646ef381d1caed8a3"
+    },
+    "big-sailboat": {
+      "attempts": 1,
+      "kind": null,
+      "message": "",
+      "ok": true,
+      "pieces": 72,
+      "seconds": 0.03,
+      "sha256": "03f207fcf56a15e2ee2cf75c0ce2715c6592c71124ecf83c397a0d22eddcab02"
+    },
+    "little-turtle": {
+      "attempts": 1,
+      "kind": null,
+      "message": "",
+      "ok": true,
+      "pieces": 98,
+      "seconds": 0.14,
+      "sha256": "f96d8571639c69c548650294993608d84938ae04d34209f89fab84f05eda37c3"
+    },
+    "medieval-corner-towers-castle": {
+      "attempts": 1,
+      "kind": null,
+      "message": "",
+      "ok": true,
+      "pieces": 254,
+      "seconds": 0.08,
+      "sha256": "e389b0f8e09d139a00b3df720748bbe4e30e4c0a3e77160c4a5a598d69ca0c78"
+    },
+    "mid-castle": {
+      "attempts": 1,
+      "kind": null,
+      "message": "",
+      "ok": true,
+      "pieces": 162,
+      "seconds": 0.03,
+      "sha256": "f295d9028b29bb014c8d47f1f78b584511710edf8459a99c972524455183f519"
+    },
+    "red-retro-car": {
+      "attempts": 1,
+      "kind": null,
+      "message": "",
+      "ok": true,
+      "pieces": 72,
+      "seconds": 0.01,
+      "sha256": "421a45d7a8017db22b2352716026a485f00f47326f8efde802f7f5809f064d86"
+    },
+    "small-bridge": {
+      "attempts": 1,
+      "kind": null,
+      "message": "",
+      "ok": true,
+      "pieces": 64,
+      "seconds": 0.02,
+      "sha256": "c3bab369d09f93e083ce12ec5a3c762b1832cc5b625201b52558cd6d473ec525"
+    },
+    "streamline-galleon": {
+      "attempts": 1,
+      "kind": null,
+      "message": "",
+      "ok": true,
+      "pieces": 93,
+      "seconds": 0.02,
+      "sha256": "bc05ee84d99d6ad48f44b066b1eb4b1063b2ab7d8f3724e79addaf5b88fdd4e0"
+    },
+    "three-mast-galleon-v3": {
+      "attempts": 1,
+      "kind": null,
+      "message": "",
+      "ok": true,
+      "pieces": 137,
+      "seconds": 0.03,
+      "sha256": "e8e467079c827e74c132e38deb73597470b3ab5e59df344d53740b10cda0af02"
+    },
+    "toy-car": {
+      "attempts": 1,
+      "kind": null,
+      "message": "",
+      "ok": true,
+      "pieces": 42,
+      "seconds": 0.0,
+      "sha256": "cfacf7262d3bff36762ada07b6c0eeb45c19d4ba6ede53e7fd43c671afa0e16d"
+    },
+    "tri-mast-sailing-ship": {
+      "attempts": 1,
+      "kind": null,
+      "message": "",
+      "ok": true,
+      "pieces": 123,
+      "seconds": 0.02,
+      "sha256": "45d9023fdd6af17cb8fdcef200ca06da9b827b674be683804e69d6857daa35c1"
+    },
+    "upright-piano": {
+      "attempts": 1,
+      "kind": null,
+      "message": "",
+      "ok": true,
+      "pieces": 114,
+      "seconds": 0.03,
+      "sha256": "e0a18057c1274237a275f302c0df3ff0b524b639e46d058bd702be0b86856f10"
+    }
+  },
+  "schemaVersion": 1,
+  "total": 12
+}

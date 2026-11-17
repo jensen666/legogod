@@ -1,0 +1,22 @@
+<div id="lego-house-build" style="background:#f5f6f8;color:#20242b;padding:16px;border-radius:14px"></div>
+
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}
+</script>
+<script type="module">
+/*__VIEWER__*/
+const DATA = /*__DATA__*/null;
+
+const el = document.getElementById('lego-house-build');
+const saved = (window.zcode && window.zcode.widgetState && window.zcode.widgetState.modelContent) || {};
+const studio = mountLegoStudio(el, DATA, {
+  initial: { tab: saved.tab, step: saved.step | 0 },
+  onState: s => { try { window.zcode.setWidgetState({ modelContent: s }).catch(() => {}); } catch (err) {} },
+});
+document.addEventListener('zcode:set_globals', e => {
+  const st = e.detail && e.detail.globals && e.detail.globals.widgetState && e.detail.globals.widgetState.modelContent;
+  if (!st) return;
+  if (st.tab) studio.activate(st.tab);
+  if (typeof st.step === 'number') studio.apply(st.step);
+});
+</script>
