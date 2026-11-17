@@ -25,6 +25,8 @@ classifiers = [
 pillow = ["Pillow>=10.0"]
 # 图表类 E2E 报告工具的可选依赖，不进入默认测试与 CI。
 charts = ["matplotlib>=3.7", "numpy>=1.24"]
+# 真实浏览器 E2E 的可选依赖，不进入默认测试与 CI。
+e2e-browser = ["playwright>=1.49"]
 # 开发与测试完整依赖（等价于 requirements-dev.txt）。
 dev = ["pytest>=8.0", "Pillow>=10.0"]
 
