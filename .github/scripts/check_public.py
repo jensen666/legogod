@@ -96,10 +96,21 @@ CONTENT_RULES = [
     ),
     (
         "硬编码凭据赋值",
-        re.compile(r"(?i)(?:api[_-]?key|token|secret|password)\s*[:=]\s*['\"][A-Za-z0-9_\-]{16,}['\"]"),
+        # 排除全大写+下划线的环境变量名常量（如 ENV_API_TOKEN = "LEGOGOD_API_TOKEN"），
+        # 它们不是凭据值；真正的假 token 由 CONTENT_ALLOWLIST 逐条说明。
+        re.compile(r"(?i)(?:api[_-]?key|token|secret|password)\s*[:=]\s*['\"]"
+                   r"(?![A-Z][A-Z0-9_]*['\"])[A-Za-z0-9_\-]{16,}['\"]"),
         (),
     ),
 ]
+
+# 内容规则的最小白名单：每条必须有明确理由，不允许整类关闭规则。
+CONTENT_ALLOWLIST = {
+    ".github/scripts/check_public.py": "公开内容检查器自身必须包含禁止模式定义字符串",
+    "app/test/service_address_test.dart": "RFC1918 各网段范围覆盖的测试示例地址，非真实环境地址",
+    "test/test_api_security.py": "测试用假 token（仅验证鉴权逻辑，非真实凭据）",
+    "tools/e2e_arch_accept.py": "E2E 工具的显式假 token（标注 do-not-log，非真实凭据）",
+}
 
 # ---- 需要存在的公开文件 ----
 REQUIRED_PATHS = (
@@ -187,6 +198,8 @@ def check_content():
     """逐行扫描文本内容，命中内部引用/路径/地址/密钥规则即违规。"""
     problems = []
     for rel, full in _iter_text_files():
+        if rel in CONTENT_ALLOWLIST:
+            continue
         try:
             with open(full, encoding="utf-8", errors="replace") as f:
                 lines = f.read().splitlines()
@@ -249,7 +262,7 @@ def fixtures():
         return 1
     with open(manifest_path, encoding="utf-8") as f:
         manifest = json.load(f)
-    items = manifest.get("fixtures") or []
+    items = manifest.get("fixtures") or manifest.get("entries") or []
     problems = []
     missing_required = []
     for item in items:
