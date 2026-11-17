@@ -135,6 +135,8 @@ REQUIRED_PATHS = (
     "assets/hero-web.png",
     "assets/demo-workflow.gif",
     "assets/demo-video-cover.png",
+    "assets/showcase-grid.png",
+    "assets/showcase.json",
     "assets/web-3d.png",
     "assets/web-steps.png",
     "assets/app-create.png",

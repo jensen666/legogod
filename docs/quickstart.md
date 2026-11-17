@@ -28,10 +28,11 @@ python -m pip install -e ".[pillow]"
 python -m pip install -r requirements-dev.txt
 ```
 
-图表类分析工具（`tools/e2e_report_charts.py`、`tools/e2e_compare_charts.py`）另需 matplotlib/numpy，属可选依赖：
+图表类分析工具（`tools/e2e_report_charts.py`、`tools/e2e_compare_charts.py`）另需 matplotlib/numpy，真实浏览器 E2E 另需 Playwright，均属可选依赖：
 
 ```bash
-python -m pip install matplotlib numpy
+python -m pip install -e ".[charts]"
+python -m pip install -e ".[e2e-browser]"
 ```
 
 未安装时这些脚本会直接报缺少模块，不影响核心生成链路。

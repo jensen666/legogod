@@ -10,11 +10,33 @@ LEGOGOD 不是让模型直接"画"出积木。模型只产出结构化设计，�
 
 ![Web 创作与 3D 作品](assets/hero-web.png)
 
+## 视频演示
+
+**不用安装，先看完整作品怎么生成。** GIF 在页面内直接播放；需要暂停、拖动进度或离线查看时，下载完整 MP4。
+
 ![完整操作流程：输入需求 → 真实生成 → 3D 与拼装步骤](assets/demo-workflow.gif)
 
-> 演示素材来自本仓库同一版本的真实运行；长等待过程已加速。完整演示视频见 [Releases](https://github.com/jensen666/legogod/releases)。
+[![观看完整演示视频](assets/demo-video-cover.png)](https://github.com/jensen666/legogod/releases/download/v1.0.0/legogod-demo.mp4)
 
-[![完整演示视频封面](assets/demo-video-cover.png)](https://github.com/jensen666/legogod/releases)
+**[▶ 观看 / 下载完整 MP4](https://github.com/jensen666/legogod/releases/download/v1.0.0/legogod-demo.mp4)** · 19 秒 · H.264
+
+> 同一真实任务、同一版本录制，长等待过程已加速。GitHub 不保证所有页面都能内嵌播放 Release 中的 MP4，因此这里用 GIF 直接展示完整流程，MP4 作为可下载视频，不跳转到第三方平台。
+
+## 9 个真实作品，一次看够
+
+![城堡、帆船、石桥、钢琴、海龟和小汽车等 9 个真实求解作品](assets/showcase-grid.png)
+
+这些不是示意图或 mock：每个公开模型都重新经过真实铺砖求解，并通过覆盖、库存、凸点连接、零件级连通、装配顺序和稳定性校验。点击作品可查看大图，源模型也可直接检查。
+
+| 作品 | 零件数 | 源模型 | 作品 | 零件数 | 源模型 |
+|---|---:|---|---|---:|---|
+| [四角楼城堡](assets/showcase/medieval-corner-towers-castle.png) | 254 | [JSON](test/fixtures/public/models/model_medieval-corner-towers-castle.json) | [中世纪城堡](assets/showcase/mid-castle.png) | 162 | [JSON](test/fixtures/public/models/model_mid-castle.json) |
+| [石拱桥](assets/showcase/arch-bridge.png) | 107 | [JSON](test/fixtures/public/models/model_arch-bridge.json) | [大帆船](assets/showcase/big-sailboat.png) | 72 | [JSON](test/fixtures/public/models/model_big-sailboat.json) |
+| [流线帆船](assets/showcase/streamline-galleon.png) | 93 | [JSON](test/fixtures/public/models/model_streamline-galleon.json) | [立式钢琴](assets/showcase/upright-piano.png) | 114 | [JSON](test/fixtures/public/models/model_upright-piano.json) |
+| [小海龟](assets/showcase/little-turtle.png) | 98 | [JSON](test/fixtures/public/models/model_little-turtle.json) | [红色复古车](assets/showcase/red-retro-car.png) | 72 | [JSON](test/fixtures/public/models/model_red-retro-car.json) |
+| [玩具小汽车](assets/showcase/toy-car.png) | 42 | [JSON](test/fixtures/public/models/model_toy-car.json) | | | |
+
+想复现这些展示图？运行 `python -m tools.render_showcase`，会重新求解并生成全部卡片和九宫格。
 
 ## 为什么值得试用
 
@@ -30,7 +52,7 @@ LEGOGOD 不是让模型直接"画"出积木。模型只产出结构化设计，�
 
 ![按层折叠的拼装步骤](assets/web-steps.png)
 
-所有截图来自同一真实任务：需求 → 模型生成 → 结构校验 → 精确求解 → 步骤与 3D 产物。生成质量存在波动，项目不会挑选结果后宣称普遍成功率。
+本节的 Web 详情、步骤与 APP 截图来自同一真实任务：需求 → 模型生成 → 结构校验 → 精确求解 → 步骤与 3D 产物；上方九宫格则分别来自 9 个公开模型的独立真实求解。生成质量存在波动，项目不会挑选结果后宣称普遍成功率。
 
 ## 60 秒快速开始
 
@@ -52,7 +74,7 @@ python -m legogod
 - 只跑快速链路、不需要渲染时，用基础安装 `python -m pip install -e .`。
 - 开发与测试：`python -m pip install -e ".[pillow]"` 后 `python -m pip install -r requirements-dev.txt`。
 - 详细步骤与常见问题见 [快速开始](docs/quickstart.md)；部署与安全见 [部署与安全](docs/deployment.md)。
-- 图表分析工具另需 `matplotlib`/`numpy`（可选，不进入默认测试）。
+- 图表分析工具用 `.[charts]` 安装；真实浏览器 E2E 用 `.[e2e-browser]` 安装（均可选，不进入默认测试）。
 
 ## 它如何工作
 

@@ -118,6 +118,7 @@
 
 - `examples/` 下的示例模型与文档、`test/` 下的测试夹具为项目自产。
 - `assets/` 下的截图/GIF 为项目真实运行产物，与仓库同一版本对应；演示 GIF/视频对长等待过程做了加速，不挑选结果冒充普遍成功率（README 已说明）。
+- `assets/showcase-grid.png` 与 `assets/showcase/` 由 `tools/render_showcase.py` 对清单内公开模型重新执行真实铺砖求解和统一校验后渲染，来源、零件数和模型哈希记录在 `assets/showcase.json`，不是第三方图片或 mock 数据。
 - 项目不使用第三方音乐/音效；如未来引入，须取得可公开再分发的授权并在本文件记录。
 - APP 启动图标为项目自绘素材（Pillow 绘制的积木砖块图形，不含任何厂商 Logo 或品牌标识），按 MIT 许可证随本项目发布；原始设计不依赖 Flutter SDK 模板图标。
 
