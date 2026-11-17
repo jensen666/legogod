@@ -27,11 +27,12 @@ def is_blocked_name(name):
     2026-11-15 复核发现：Windows 文件系统不区分大小写，原实现用
     ``name.startswith(("jobs_store", "run_"))`` 判断，请求 ``/files/JOBS_STORE.json``
     会被当作合法产物名、再经 os.path.join 命中同一个 ``jobs_store.json``，从而读到完整任务历史。
-    这里统一用 ``os.path.normcase``（Windows 下转小写、正斜杠转反斜杠）后比较，
-    大写、混合大小写与短文件名（由 ``files_path`` 解析真实路径后再判一次）都被拦截。
+    这里统一用 ``os.path.normcase``（Windows 下转小写、正斜杠转反斜杠）后再显式 ``lower()``：
+    POSIX 上 normcase 是恒等函数，只靠 normcase 会让 Linux/macOS 漏拦大写文件名。
     """
-    folded = os.path.normcase(str(name or ""))
-    return any(folded.startswith(os.path.normcase(prefix)) for prefix in FILES_NAME_BLOCKLIST)
+    folded = os.path.normcase(str(name or "")).lower()
+    return any(folded.startswith(os.path.normcase(prefix).lower())
+               for prefix in FILES_NAME_BLOCKLIST)
 
 
 def files_allowed(name):
