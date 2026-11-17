@@ -129,10 +129,14 @@ class JobStore:
         with self.lock:
             return {jid: persist_record(job) for jid, job in self._jobs.items()}
 
-    def save(self):
-        """任务历史持久化：锁内只做内存快照，锁外原子写盘（IO 绝不放锁内，失败只打日志）。"""
+    def save(self, terminal=None):
+        """任务历史持久化；terminal 可只在快照中预写终态，避免内存状态早于落盘发布。"""
         try:
             data = self._snapshot()
+            if terminal is not None:
+                job_id, status = terminal
+                if job_id in data:
+                    data[job_id]["status"] = status
             atomic_write_json(self.store_path, to_jsonable(data))
         except Exception as e:  # noqa: BLE001 - 持久化失败不应影响任务运行
             print(f"[job_store] 任务历史持久化失败（不影响当前任务）：{e}", flush=True)

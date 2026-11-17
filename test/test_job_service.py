@@ -331,8 +331,7 @@ class WorkerTest(JobServiceTestBase):
                                             "name": "结果"})
         created = self.service.create_job("x", "fast")
         self.wait_terminal(created["id"])
-        # worker 收尾的 save 与本测试的 save 可能并发替换同一目标文件：Windows 上偶发
-        # 共享冲突会让单次 save 返回 False（内容相同，属可重试的瞬时错误）。
+        # 终态现在只会在最终保存后可见；保留 Windows 瞬时共享冲突的有界重试验证。
         saved = False
         for _ in range(50):
             if self.store.save():
@@ -347,6 +346,29 @@ class WorkerTest(JobServiceTestBase):
         self.assertEqual(job["mode"], "fast")
         self.assertEqual(job["status"], "done")
         self.assertIsNotNone(job["cancel"])
+
+    def test_terminal_status_is_published_only_after_final_save(self):
+        """最终保存被阻塞时仍显示 running；保存返回后才允许发布 done。"""
+        release_save = threading.Event()
+        original_save = self.store.save
+
+        def delayed_save(*args, **kwargs):
+            if kwargs.get("terminal"):
+                release_save.wait(1)
+            return original_save(*args, **kwargs)
+
+        self.store.save = delayed_save
+        created = self.service.create_job("x", "fast")
+        time.sleep(0.05)
+        with self.store.lock:
+            self.assertEqual(self.store.get_locked(created["id"])["status"], "running")
+        release_save.set()
+        job = self.wait_terminal(created["id"])
+        self.assertEqual(job["status"], "done")
+        reloaded = JobStore(self.tmp)
+        self.assertEqual(reloaded.load(), 1)
+        with reloaded.lock:
+            self.assertEqual(reloaded.get_locked(created["id"])["status"], "done")
 
 
 class HistoryAndTrimTest(JobServiceTestBase):

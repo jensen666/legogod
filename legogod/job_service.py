@@ -129,8 +129,9 @@ class JobService:
         return job_id
 
     def run_worker(self, job):
-        """执行一次生成并落终态；取消/成功/失败/内部异常映射与改造前逐项一致。"""
+        """执行生成；先在持久化快照写终态，再向调用方发布终态，避免保存竞态。"""
         returned, result, error = False, None, None
+        terminal_status = None
         try:
             try:
                 result = self.runner(job["desc"], interactive=False, log=self._event_callback(job),
@@ -145,16 +146,20 @@ class JobService:
                 if job.get("status") != "cancelled":
                     if not returned:
                         job["result"] = {"ok": False, "error": f"内部异常: {error}"}
-                        job["status"] = "error"
+                        terminal_status = "error"
                     else:
                         job["result"] = result
                         ok, cancelled = _result_flags(result)
-                        job["status"] = "done" if ok else ("cancelled" if cancelled else "error")
+                        terminal_status = "done" if ok else ("cancelled" if cancelled else "error")
         finally:
             with self.store.lock:
+                if terminal_status is None:
+                    terminal_status = job.get("status") if job.get("status") != "running" else "error"
                 job["live"] = None
                 self.store.trim_locked()
-            self.store.save()
+            self.store.save(terminal=(job["id"], terminal_status))
+            with self.store.lock:
+                job["status"] = terminal_status
             print(f"[job_service] 任务 {job.get('id')} 结束：{job.get('status')}", flush=True)
 
     def _event_callback(self, job):
