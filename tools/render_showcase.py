@@ -17,15 +17,15 @@ from legogod.render import render_views  # noqa: E402
 from legogod.validate import validate_solution  # noqa: E402
 
 SHOWCASE = (
-    ("medieval-corner-towers-castle", "四角楼城堡"),
     ("mid-castle", "中世纪城堡"),
-    ("arch-bridge", "石拱桥"),
-    ("big-sailboat", "大帆船"),
+    ("yellow-floppy-dog", "垂耳小狗"),
+    ("red-apple-stem", "红苹果"),
     ("streamline-galleon", "流线帆船"),
-    ("upright-piano", "立式钢琴"),
-    ("little-turtle", "小海龟"),
+    ("three-mast-galleon-v3", "三桅帆船"),
     ("red-retro-car", "红色复古车"),
-    ("toy-car", "玩具小汽车"),
+    ("medieval-corner-towers-castle", "四角楼城堡"),
+    ("arch-bridge", "石拱桥"),
+    ("small-bridge", "小桥"),
 )
 ACCENTS = ("#E5A100", "#C96C4B", "#4D87A8", "#4D87A8", "#6875A9", "#4E5262", "#4D9A72", "#D55445", "#E5A100")
 
@@ -131,12 +131,22 @@ def compose_grid(cards, out_dir):
     return path
 
 
+def _remove_stale_cards(out_dir):
+    """清理已被换下的旧案例，避免九宫格更新后仍公开过期卡片。"""
+    expected = {slug for slug, _title in SHOWCASE}
+    card_dir = os.path.join(out_dir, "showcase")
+    os.makedirs(card_dir, exist_ok=True)
+    for name in os.listdir(card_dir):
+        if name.endswith(".png") and name[:-4] not in expected:
+            os.remove(os.path.join(card_dir, name))
+
+
 def generate(manifest_path, out_dir):
     """按固定九例生成卡片、九宫格和来源清单，任一例失败则整体失败。"""
     manifest = _load_json(manifest_path)
     models = {entry.get("path", "").removeprefix("test/fixtures/public/models/model_").removesuffix(".json"): entry
               for entry in manifest.get("entries") or [] if entry.get("type") == "model"}
-    os.makedirs(os.path.join(out_dir, "showcase"), exist_ok=True)
+    _remove_stale_cards(out_dir)
     records = []
     with tempfile.TemporaryDirectory(prefix="legogod-showcase-") as temp_dir:
         for (slug, title), accent in zip(SHOWCASE, ACCENTS):
@@ -150,7 +160,7 @@ def generate(manifest_path, out_dir):
             print(f"[showcase] {title}: {record['pieces']} 块，统一校验通过", flush=True)
     compose_grid(records, out_dir)
     data = {"schemaVersion": 1, "count": len(records), "examples": records}
-    with open(os.path.join(out_dir, "showcase.json"), "w", encoding="utf-8") as f:
+    with open(os.path.join(out_dir, "showcase.json"), "w", encoding="utf-8", newline="\n") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
         f.write("\n")
     print(f"[showcase] 已生成 {len(records)} 个案例与九宫格：{out_dir}", flush=True)

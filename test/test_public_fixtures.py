@@ -2,7 +2,7 @@
 """公开夹具清单自检（公开 CI 第一步）。
 
 覆盖方案 6.4 的硬性口径：
-1. 清单 schema、id/path 唯一、必需语料数（design 2 / model 12 / solution 10 = 24）；
+1. 清单 schema、id/path 唯一、必需语料数（design 2 / model 14 / solution 10 = 26）；
 2. 每个登记文件存在、大小与 SHA-256 一致；
 3. `test/fixtures/public/` 下没有清单外文件（防偷偷多带私有语料）；
 4. 公开离线基线与清单绑定：样本数、slug 集合、逐样本 SHA 一致，且非空集；
@@ -30,8 +30,8 @@ from _public_fixtures import (  # noqa: E402
 )
 from tools import benchmark_offline, check_public_fixtures  # noqa: E402
 
-EXPECTED_REQUIRED = {"design-plan": 2, "model": 12, "solution": 10}
-EXPECTED_REQUIRED_TOTAL = 24
+EXPECTED_REQUIRED = {"design-plan": 2, "model": 14, "solution": 10}
+EXPECTED_REQUIRED_TOTAL = 26
 EXPECTED_BASELINE_FIXTURES = 12
 # 真实运行产物名（<slug>_rNNN_<8位run_id>）、本机绝对路径、内部过程文档引用。
 PRIVATE_PATTERNS = (

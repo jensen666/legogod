@@ -7,9 +7,9 @@
 2. 每个条目文件存在、大小与 SHA-256 一致；
 3. 反向检查：`test/fixtures/public/` 下不允许清单外文件；
 4. 每个条目声明的消费方文件必须存在；必需语料类型下限 design>=2 / model>=12 /
-   solution>=10，必需语料数 == 24（派生基线为可选，不计入必需语料）；
+   solution>=10，必需语料数 == 26（派生基线为可选，不计入必需语料）；
 5. 输出一行机器可读日志：
-   `public-fixtures: total=25 required=24 optional=1 missing=0 hash_mismatch=0 unlisted=0 ok=true`
+   `public-fixtures: total=28 required=26 optional=2 missing=0 hash_mismatch=0 unlisted=0 ok=true`
 
 退出码：0 全部通过；2 任一失败。禁止 `--allow-missing` 之类的放水开关。
 """
@@ -25,7 +25,7 @@ from _public_fixtures import (  # noqa: E402
 )
 
 MIN_REQUIRED_BY_TYPE = {"design-plan": 2, "model": 12, "solution": 10}
-EXPECTED_REQUIRED_CORPUS = 24
+EXPECTED_REQUIRED_CORPUS = 26
 
 
 def check(manifest_path=MANIFEST):

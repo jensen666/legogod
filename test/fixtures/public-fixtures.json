@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "corpusVersion": "2026-11-17",
-  "generatedAt": "2026-11-17",
+  "corpusVersion": "2026-11-18",
+  "generatedAt": "2026-11-18",
   "root": "test/fixtures/public",
-  "note": "公开夹具唯一清单（方案 6.4 / 02 语料审计第 7 章）。只登记经来源与授权审查确认可公开的项目自造语料；真实用户任务运行产物（artifacts/model_*_rNNN_*.json、solution_*_rNNN_*.json、run 记录、jobs_store）一律不进入本清单、不随仓发布。12 个 model 与 10 个 solution 为 2026-10-25/26 早期项目自造自测语料（02 报告 A 级；原路径与 SHA 见 source），2 个 design 为按方案 6.4 重新制作的自造测试几何。test/fixtures/draw_budget_samples.json 含历史私有运行产物名，已去标识化（只保留数值统计、name 改为无语义序号 sample-NNN）但仍不属于公开夹具：公开仓不提供冻结标定快照，tools/calibrate_draw_budget.py 在公开语料下明确报告「不可用于重新标定」。旧的 45 样本历史基线已移出公开树（迁至 artifacts/baselines/offline_full.json 供私有回归），公开基线 test/fixtures/public/offline-baseline.json 由公开 12 个模型现场生成并与本清单绑定。",
+  "note": "公开夹具唯一清单（方案 6.4 / 02 语料审计第 7 章）。只登记经来源与授权审查确认可公开的项目自造语料；真实用户任务运行产物（artifacts/model_*_rNNN_*.json、solution_*_rNNN_*.json、run 记录、jobs_store）一律不进入本清单、不随仓发布。14 个 model 与 10 个 solution 为 2026-10-25/26 早期项目自造自测语料（02 报告 A 级；原路径与 SHA 见 source；其中 12 个 model 用于离线基准，新增红苹果与垂耳小狗仅用于展示），2 个 design 为按方案 6.4 重新制作的自造测试几何。test/fixtures/draw_budget_samples.json 含历史私有运行产物名，已去标识化（只保留数值统计、name 改为无语义序号 sample-NNN）但仍不属于公开夹具：公开仓不提供冻结标定快照，tools/calibrate_draw_budget.py 在公开语料下明确报告「不可用于重新标定」。旧的 45 样本历史基线已移出公开树（迁至 artifacts/baselines/offline_full.json 供私有回归），公开基线 test/fixtures/public/offline-baseline.json 由公开 12 个模型现场生成并与本清单绑定。",
   "entries": [
     {
       "id": "design-eave-overhang-ok",
@@ -212,6 +212,34 @@
       ],
       "required": true,
       "note": "离线基准样本；期望 passed=true"
+    },
+    {
+      "id": "model-red-apple-stem",
+      "path": "test/fixtures/public/models/model_red-apple-stem.json",
+      "type": "model",
+      "size": 31164,
+      "sha256": "905ca6c570b6aabab6c815e38aea0da7cc01e68c7aeae1709dac5ec6e91ce823",
+      "source": "artifacts/model_red-apple-stem.json（2026-10-25/26 早期项目自造自测语料；02 语料审计 A 级；展示案例复核后迁入）",
+      "license": "MIT (project-owned)",
+      "consumers": [
+        "tools/render_showcase.py"
+      ],
+      "required": true,
+      "note": "展示专用模型；重新求解与统一校验通过，70 块零件"
+    },
+    {
+      "id": "model-yellow-floppy-dog",
+      "path": "test/fixtures/public/models/model_yellow-floppy-dog.json",
+      "type": "model",
+      "size": 33938,
+      "sha256": "cacd55d13a2fddc728552087226b0ddb30d75a87d48f7e21278ff92086581ed0",
+      "source": "artifacts/model_yellow-floppy-dog.json（2026-10-25/26 早期项目自造自测语料；02 语料审计 A 级；展示案例复核后迁入）",
+      "license": "MIT (project-owned)",
+      "consumers": [
+        "tools/render_showcase.py"
+      ],
+      "required": true,
+      "note": "展示专用模型；重新求解与统一校验通过，73 块零件"
     },
     {
       "id": "solution-arch-bridge",

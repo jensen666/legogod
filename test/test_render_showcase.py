@@ -23,6 +23,19 @@ class ShowcaseTest(unittest.TestCase):
                      for entry in manifest.get("entries") or [] if entry.get("type") == "model"}
         self.assertTrue(set(slugs).issubset(available))
 
+    def test_stale_cards_are_removed(self):
+        """换例后删除旧卡片，当前九例不会被误删。"""
+        with tempfile.TemporaryDirectory() as out_dir:
+            card_dir = os.path.join(out_dir, "showcase")
+            os.makedirs(card_dir)
+            stale = os.path.join(card_dir, "little-turtle.png")
+            current = os.path.join(card_dir, f"{render_showcase.SHOWCASE[0][0]}.png")
+            Image.new("RGB", (1, 1), "white").save(stale)
+            Image.new("RGB", (1, 1), "white").save(current)
+            render_showcase._remove_stale_cards(out_dir)
+            self.assertFalse(os.path.exists(stale))
+            self.assertTrue(os.path.exists(current))
+
     def test_grid_is_three_by_three(self):
         """合成图尺寸对应三列三行；案例数不对时明确拒绝。"""
         records = []
