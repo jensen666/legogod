@@ -3,19 +3,6 @@
   "count": 9,
   "examples": [
     {
-      "slug": "medieval-corner-towers-castle",
-      "title": "四角楼城堡",
-      "image": "assets/showcase/medieval-corner-towers-castle.png",
-      "model": "test/fixtures/public/models/model_medieval-corner-towers-castle.json",
-      "pieces": 254,
-      "grid": {
-        "w": 16,
-        "d": 16
-      },
-      "validation": "passed",
-      "modelSha256": "e389b0f8e09d139a00b3df720748bbe4e30e4c0a3e77160c4a5a598d69ca0c78"
-    },
-    {
       "slug": "mid-castle",
       "title": "中世纪城堡",
       "image": "assets/showcase/mid-castle.png",
@@ -29,30 +16,30 @@
       "modelSha256": "f295d9028b29bb014c8d47f1f78b584511710edf8459a99c972524455183f519"
     },
     {
-      "slug": "arch-bridge",
-      "title": "石拱桥",
-      "image": "assets/showcase/arch-bridge.png",
-      "model": "test/fixtures/public/models/model_arch-bridge.json",
-      "pieces": 107,
+      "slug": "yellow-floppy-dog",
+      "title": "垂耳小狗",
+      "image": "assets/showcase/yellow-floppy-dog.png",
+      "model": "test/fixtures/public/models/model_yellow-floppy-dog.json",
+      "pieces": 73,
       "grid": {
-        "w": 19,
-        "d": 10
+        "w": 10,
+        "d": 14
       },
       "validation": "passed",
-      "modelSha256": "192b9f8fcb8a2f1435f112e7391f538d50c9650e2ec512b646ef381d1caed8a3"
+      "modelSha256": "cacd55d13a2fddc728552087226b0ddb30d75a87d48f7e21278ff92086581ed0"
     },
     {
-      "slug": "big-sailboat",
-      "title": "大帆船",
-      "image": "assets/showcase/big-sailboat.png",
-      "model": "test/fixtures/public/models/model_big-sailboat.json",
-      "pieces": 72,
+      "slug": "red-apple-stem",
+      "title": "红苹果",
+      "image": "assets/showcase/red-apple-stem.png",
+      "model": "test/fixtures/public/models/model_red-apple-stem.json",
+      "pieces": 70,
       "grid": {
-        "w": 20,
+        "w": 12,
         "d": 12
       },
       "validation": "passed",
-      "modelSha256": "03f207fcf56a15e2ee2cf75c0ce2715c6592c71124ecf83c397a0d22eddcab02"
+      "modelSha256": "905ca6c570b6aabab6c815e38aea0da7cc01e68c7aeae1709dac5ec6e91ce823"
     },
     {
       "slug": "streamline-galleon",
@@ -68,30 +55,17 @@
       "modelSha256": "bc05ee84d99d6ad48f44b066b1eb4b1063b2ab7d8f3724e79addaf5b88fdd4e0"
     },
     {
-      "slug": "upright-piano",
-      "title": "立式钢琴",
-      "image": "assets/showcase/upright-piano.png",
-      "model": "test/fixtures/public/models/model_upright-piano.json",
-      "pieces": 114,
+      "slug": "three-mast-galleon-v3",
+      "title": "三桅帆船",
+      "image": "assets/showcase/three-mast-galleon-v3.png",
+      "model": "test/fixtures/public/models/model_three-mast-galleon-v3.json",
+      "pieces": 137,
       "grid": {
-        "w": 16,
-        "d": 7
+        "w": 12,
+        "d": 20
       },
       "validation": "passed",
-      "modelSha256": "e0a18057c1274237a275f302c0df3ff0b524b639e46d058bd702be0b86856f10"
-    },
-    {
-      "slug": "little-turtle",
-      "title": "小海龟",
-      "image": "assets/showcase/little-turtle.png",
-      "model": "test/fixtures/public/models/model_little-turtle.json",
-      "pieces": 98,
-      "grid": {
-        "w": 16,
-        "d": 16
-      },
-      "validation": "passed",
-      "modelSha256": "f96d8571639c69c548650294993608d84938ae04d34209f89fab84f05eda37c3"
+      "modelSha256": "e8e467079c827e74c132e38deb73597470b3ab5e59df344d53740b10cda0af02"
     },
     {
       "slug": "red-retro-car",
@@ -107,17 +81,43 @@
       "modelSha256": "421a45d7a8017db22b2352716026a485f00f47326f8efde802f7f5809f064d86"
     },
     {
-      "slug": "toy-car",
-      "title": "玩具小汽车",
-      "image": "assets/showcase/toy-car.png",
-      "model": "test/fixtures/public/models/model_toy-car.json",
-      "pieces": 42,
+      "slug": "medieval-corner-towers-castle",
+      "title": "四角楼城堡",
+      "image": "assets/showcase/medieval-corner-towers-castle.png",
+      "model": "test/fixtures/public/models/model_medieval-corner-towers-castle.json",
+      "pieces": 254,
       "grid": {
-        "w": 8,
-        "d": 14
+        "w": 16,
+        "d": 16
       },
       "validation": "passed",
-      "modelSha256": "cfacf7262d3bff36762ada07b6c0eeb45c19d4ba6ede53e7fd43c671afa0e16d"
+      "modelSha256": "e389b0f8e09d139a00b3df720748bbe4e30e4c0a3e77160c4a5a598d69ca0c78"
+    },
+    {
+      "slug": "arch-bridge",
+      "title": "石拱桥",
+      "image": "assets/showcase/arch-bridge.png",
+      "model": "test/fixtures/public/models/model_arch-bridge.json",
+      "pieces": 107,
+      "grid": {
+        "w": 19,
+        "d": 10
+      },
+      "validation": "passed",
+      "modelSha256": "192b9f8fcb8a2f1435f112e7391f538d50c9650e2ec512b646ef381d1caed8a3"
+    },
+    {
+      "slug": "small-bridge",
+      "title": "小桥",
+      "image": "assets/showcase/small-bridge.png",
+      "model": "test/fixtures/public/models/model_small-bridge.json",
+      "pieces": 64,
+      "grid": {
+        "w": 20,
+        "d": 6
+      },
+      "validation": "passed",
+      "modelSha256": "c3bab369d09f93e083ce12ec5a3c762b1832cc5b625201b52558cd6d473ec525"
     }
   ]
 }

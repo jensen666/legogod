@@ -30,11 +30,11 @@ LEGOGOD 不是让模型直接"画"出积木。模型只产出结构化设计，�
 
 | 作品 | 零件数 | 源模型 | 作品 | 零件数 | 源模型 |
 |---|---:|---|---|---:|---|
-| [四角楼城堡](assets/showcase/medieval-corner-towers-castle.png) | 254 | [JSON](test/fixtures/public/models/model_medieval-corner-towers-castle.json) | [中世纪城堡](assets/showcase/mid-castle.png) | 162 | [JSON](test/fixtures/public/models/model_mid-castle.json) |
-| [石拱桥](assets/showcase/arch-bridge.png) | 107 | [JSON](test/fixtures/public/models/model_arch-bridge.json) | [大帆船](assets/showcase/big-sailboat.png) | 72 | [JSON](test/fixtures/public/models/model_big-sailboat.json) |
-| [流线帆船](assets/showcase/streamline-galleon.png) | 93 | [JSON](test/fixtures/public/models/model_streamline-galleon.json) | [立式钢琴](assets/showcase/upright-piano.png) | 114 | [JSON](test/fixtures/public/models/model_upright-piano.json) |
-| [小海龟](assets/showcase/little-turtle.png) | 98 | [JSON](test/fixtures/public/models/model_little-turtle.json) | [红色复古车](assets/showcase/red-retro-car.png) | 72 | [JSON](test/fixtures/public/models/model_red-retro-car.json) |
-| [玩具小汽车](assets/showcase/toy-car.png) | 42 | [JSON](test/fixtures/public/models/model_toy-car.json) | | | |
+| [中世纪城堡](assets/showcase/mid-castle.png) | 162 | [JSON](test/fixtures/public/models/model_mid-castle.json) | [垂耳小狗](assets/showcase/yellow-floppy-dog.png) | 73 | [JSON](test/fixtures/public/models/model_yellow-floppy-dog.json) |
+| [红苹果](assets/showcase/red-apple-stem.png) | 70 | [JSON](test/fixtures/public/models/model_red-apple-stem.json) | [流线帆船](assets/showcase/streamline-galleon.png) | 93 | [JSON](test/fixtures/public/models/model_streamline-galleon.json) |
+| [三桅帆船](assets/showcase/three-mast-galleon-v3.png) | 137 | [JSON](test/fixtures/public/models/model_three-mast-galleon-v3.json) | [红色复古车](assets/showcase/red-retro-car.png) | 72 | [JSON](test/fixtures/public/models/model_red-retro-car.json) |
+| [四角楼城堡](assets/showcase/medieval-corner-towers-castle.png) | 254 | [JSON](test/fixtures/public/models/model_medieval-corner-towers-castle.json) | [石拱桥](assets/showcase/arch-bridge.png) | 107 | [JSON](test/fixtures/public/models/model_arch-bridge.json) |
+| [小桥](assets/showcase/small-bridge.png) | 64 | [JSON](test/fixtures/public/models/model_small-bridge.json) | | | |
 
 想复现这些展示图？运行 `python -m tools.render_showcase`，会重新求解并生成全部卡片和九宫格。
 
