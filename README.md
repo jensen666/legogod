@@ -1,5 +1,7 @@
 # LEGOGOD · 把一句话变成可拼装的 3D 积木作品
 
+简体中文 · [English](README.en.md)
+
 [![CI](https://github.com/jensen666/legogod/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/jensen666/legogod/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB.svg)](pyproject.toml)

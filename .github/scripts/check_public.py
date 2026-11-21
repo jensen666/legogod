@@ -226,7 +226,7 @@ def check_readme_links():
     """检查 README 与 docs 中相对 Markdown 链接/图片目标是否存在。"""
     problems = []
     link_re = re.compile(r"!?\[[^\]]*\]\(([^)\s]+)")
-    for rel in ("README.md", "CONTRIBUTING.md", "SECURITY.md"):
+    for rel in ("README.md", "README.en.md", "CONTRIBUTING.md", "SECURITY.md"):
         path = os.path.join(ROOT, rel)
         if not os.path.isfile(path):
             continue
